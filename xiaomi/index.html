@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米</title>
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div class="topBar">
+    <div class="content">
+        <div class="barNav">
+            <a href=""> 小米商城</a><span>|</span>
+            <a href="">MIUI</a><span>|</span>
+            <a href="">loT</a><span>|</span>
+            <a href="">云服务</a><span>|</span>
+            <a href="">金融</a><span>|</span>
+            <a href="">有品</a><span>|</span>
+            <a href="">小爱开放平台</a>|<span></span>
+            <a href="">政企服务</a><span>|</span>
+            <a href="">资质证照</a><span>|</span>
+            <a href="">协议规则</a><span>|</span>
+            <a href="">下载app</a><span>|</span>
+            <a href="">Select Region</a><span>|</span>
+        </div>
+        <div class="barCart">
+            <a href=""><i class="iconfont icon-gouwuchekong"></i>
+                购物车（666）
+            </a>
+        </div>
+        <div class="barInfo">
+            <a href="">登录</a><span>|</span>
+            <a href="">注册</a><span>|</span>
+            <a href="">消息通知</a><span>|</span>
+        </div>
+    </div>
+</div>
+<!--topBar-->
+<div class="topHeader">
+    <div class="headerContent">
+        <div class="headerPhoto">
+            <a href="">
+                <img src="./img/mi.png" alt="加载失败">
+            </a>
+        </div>
+        <div class="headerText">
+            <a href="">小米手机</a>
+            <a href="">红米</a>
+            <a href="">电视</a>
+            <a href="">笔记本</a>
+            <a href="">家电</a>
+            <a href="">新品</a>
+            <a href="">路由器</a>
+            <a href="">智能硬件</a>
+            <a href="">服务</a>
+            <a href="">社区</a>
+        </div>
+        <div class="headerSearch">
+            <form method="get">
+                <input type="text" style="width: 248px;height: 50px; border: 1px solid #f5f5f5; float: left"
+                       placeholder="小米8  小米MIX 2S">
+                <div style="border-top: 1px solid #f5f5f5;border-right: 1px solid #f5f5f5;border-bottom: 1px solid #f5f5f5;">
+                    <i class="iconfont icon-fangdajing"></i>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--topHeader-->
+<div id="banner">
+    <ul id="imgBox">
+        <li class="active"><a href=""><img src="./img/b1.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/b2.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/b3.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/b4.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/b5.jpg" alt=""></a></li>
+    </ul>
+    <div id="prev" class="slides"></div>
+    <div id="next" class="slides"></div>
+    <ul id="pagerBox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="aslide">
+        <li class="aslideList">
+            <a href="">
+                手机 电话卡
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                电视 盒子
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                笔记本 平板
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                家电 插线板
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                出行 穿戴
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                智能 路由器
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                电源 配件
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                健康 儿童
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                耳机 音响
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+        <li class="aslideList">
+            <a href="">
+                生活 箱包
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+<script>
+    let pages = document.querySelectorAll("#pagerBox>li");//声明pagers变量通过document整个文档用querySelectorAll选择文档中的标签
+
+    let img = document.querySelectorAll("#imgBox>li");//声明pagers变量通过document整个文档用querySelectorAll选择文档中的标签
+
+    let banner = document.querySelector("#banner");//声明pagers变量通过document整个文档用querySelectorAll选择文档中的标签
+
+    let flag = false;//声明flag是假，下面有它的条件，如果满足它是false那个条件就会返回false，否则就继续实施下面的程序
+
+    pages.forEach(function (ele, index) {//通过已经声明的变量pagers用forEach方法遍历数组用回调函数(对于每个值要进行的操作)
+        ele.onclick = function () {//通过ele这个参数用onclick鼠标单击事件用函数表示出来
+            flag = true;//如果点击了flag为真，下面的条件就不满足就不会继续了
+            now = index;
+            for (let i = 0; i < img.length; i++) {//通过for循环声明一个变量i初始值为0，i小于变量imgs的length长度，i循环++
+                img[i].classList.remove("active");//变量imgs的（第i个）classList类的集合通过remove移除active这个类
+                pages[i].classList.remove("active");//变量pagers的（第i个）classList类的集合通过remove移除active这个类
+            }
+            img[index].classList.add("active");//变量imgs第index个的class List类的集合用add添加active这个类
+            this.classList.add("active");//变量pagers中的class List类的集合用add添加active这个类
+        }
+    });
+    let now = 0;// 声明一个变量now初始值为0
+    function move() {//创建move函数
+        now++;// 变量now在函数中++
+        if (now === img.length) {//如果满足条件变量now=变量imgs的长度就让now恢复初始值0
+            now = 0;
+        }
+        if (now === -1) {
+            now = img.length - 1;
+        }
+        for (let i = 0; i < img.length; i++) {//通过for循环声明一个变量i初始值为0，i小于变量imgs的length长度，i循环++
+            img[i].classList.remove("active");//变量imgs的（第i个）classList类的集合通过remove移除active这个类
+            pages[i].classList.remove("active");//变量pagers的（第i个）classList类的集合通过remove移除active这个类
+        }
+        img[now].classList.add("active");//变量imgs第index个的class List类的集合用add添加active这个类
+        pages[now].classList.add("active");//变量pagers第index个的class List类的集合用add添加active这个类
+    }
+
+    {
+        let st = setInterval(move, 3000);//声明一个变量st通过setInterval方法定时3000毫秒调用move函数一次
+        banner.onmouseenter = function () {//通过onmouseenter事件在鼠标进入banner这个元素时
+            clearInterval(st);//清除定时st
+        };
+        banner.onmouseleave = function () {//通过onmouseleave事件在鼠标离开banner这个元素时
+            if (flag) {//如果满足flag就返回flag的原值
+                return;
+            }
+            st = setInterval(move, 3000);//变量st通过setInterval方法定时3000毫秒调用move函数一次
+        }
+    }
+    let next = document.querySelector("#next");
+    let prev = document.querySelector("#prev");
+    let flag2 = true;
+    next.onclick = function () {
+        if (flag2) {
+            flag2 = false;
+            flag = true;
+            move();
+        }
+    };
+    prev.onclick = function () {
+        if (flag2) {
+            flag2 = false;
+            now -= 2;
+            flag = true;
+            move();
+        }
+    };
+    img.forEach(function (ele) {
+        ele.addEventListener("transitionend", function () {
+            flag2 = true;
+        })
+    });
+</script>
+<!--banner-->
+<div class="show">
+    <div class="showMain">
+        <div class="showBuy">
+            <div class="buyPhoto">
+                <a href="">
+                    <i class="iconfont icon-shouji"></i>
+                    <p class="txt">选购手机</p>
+                </a>
+            </div>
+            <div class="buyPhoto">
+                <a href="">
+                    <i class="iconfont icon-liwu"></i>
+                    <p class="txt">企业团购</p>
+                </a>
+            </div>
+            <div class="buyPhoto">
+                <a href="">
+                    <i class="iconfont icon-Fma"></i>
+                    <p class="txt">F码通道</p>
+                </a>
+            </div>
+            <div class="buyPhoto">
+                <a href="">
+                    <i class="iconfont icon-mifenqia"></i>
+                    <p class="txt">米粉卡</p>
+                </a>
+            </div>
+            <div class="buyPhoto">
+                <a href="">
+                    <i class="iconfont icon-yijiuhuanxin"></i>
+                    <p class="txt">以旧换新</p>
+                </a>
+            </div>
+            <div class="buyPhoto">
+                <a href="">
+                    <i class="iconfont icon-huafeichongzhi"></i>
+                    <p class="txt">话费充值</p>
+                </a>
+            </div>
+        </div>
+        <div class="showPhoto">
+            <div class="showFirst">
+                <a href="">
+                    <img src="./img/1.jpg" alt="">
+                </a>
+            </div>
+            <div class="showSecond">
+                <a href="">
+                    <img src="./img/2.jpg" alt="">
+                </a>
+            </div>
+            <div class="showSecond">
+                <a href="">
+                    <img src="./img/3.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--show-->
+<div class="buyMain">
+    <div class="buyContent">
+        <div class="buyText">
+            <h2 class="buyTextTitle">小米闪购</h2>
+            <div class="buyTextMore">
+                <div class="buyTextMoreLogo" style="border-right: 1px solid #b0b0b0">
+                    <a href="">
+                        <i class="iconfont icon-zuojiantou" style="color: rgba(0,0,0,0.2)"></i>
+                    </a>
+                </div>
+                <div class="buyTextMoreLogo">
+                    <a href="">
+                        <i class="iconfont icon-zuojiantou-copy"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="buyPs">
+            <div class="psFourth" style="border-top: 1px solid #e53935">
+                <a href="">
+                    <img src="./img/shijian.png" alt="加载失败">
+                </a>
+            </div>
+            <div class="psFour" style="border-top: 1px solid #ffac13">
+                <a href="">
+                    <img src="./img/1.1.png" alt="加载失败">
+                </a>
+            </div>
+            <div class="psFour" style="border-top: 1px solid #83c44e">
+                <a href="">
+                    <img src="./img/1.2.png" alt="加载失败">
+                </a>
+            </div>
+            <div class="psFour" style="border-top: 1px solid #2196f3">
+                <a href="">
+                    <img src="./img/1.3.png" alt="加载失败">
+                </a>
+            </div>
+            <div class="psFour" style="border-top: 1px solid#e53935">
+                <a href="">
+                    <img src="./img/1.4.png" alt="加载失败">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--buyMain-->
+<div class="blackShark">
+    <div class="blackSharkPs">
+        <a href="">
+            <img src="./img/shark.jpg" alt="加载失败">
+        </a>
+    </div>
+</div>
+<!--blackShark-->
+<div class="phone">
+    <div class="phoneContent">
+        <div class="phoneText">
+            手机
+            <div class="phoneTextMore">
+                <a href="" class="orange">
+                    查看更多 <i class="iconfont icon-zuojiantou-copy"></i>
+                </a>
+            </div>
+        </div>
+        <div class="phonePhoto">
+            <div class="phonePhotoLeft">
+                <a href="">
+                    <img src="./img/phone.jpg" alt="">
+                </a>
+            </div>
+            <div class="phonePhotoRight">
+                <div class="new">新品</div>
+                <div class="phonePhotoRightImage">
+                    <a href="">
+                        <img src="./img/phone1.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米8 青春版 4GB+64GB
+                </a></h3>
+                <p class="txt">潮流镜面渐变色，2400万自拍旗舰</p>
+                <p class="number"><span>1399</span>元</p>
+            </div>
+            <div class="phonePhotoRight">
+                <div class="new">新品</div>
+                <div class="phonePhotoRightImage">
+                    <a href="">
+                        <img src="./img/phone2.png" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米Play
+                </a></h3>
+                <p class="txt">内置每月10G高速流量,高颜值流光渐变色</p>
+                <p class="number"><span>1099</span>元</p>
+            </div>
+            <div class="phonePhotoRight">
+                <div class="new" style="background: red">减300元</div>
+                <div class="phonePhotoRightImage">
+                    <a href="">
+                        <img src="./img/phone3.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米8 SE 6GB+64GB
+                </a></h3>
+                <p class="txt">Al超感光双摄,三星AMOLED屏幕</p>
+                <p class="number"><span>1699</span>元
+                    <del><span>1999</span>元</del>
+                </p>
+            </div>
+            <div class="phonePhotoRight">
+                <div class="new" style="background: red">减600元</div>
+                <div class="phonePhotoRightImage">
+                    <a href="">
+                        <img src="./img/phone4.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米MIX 2S 8GB+256GB
+                </a></h3>
+                <p class="txt">骁龙845 年度旗舰处理器，艺术品般陶瓷机身</p>
+                <p class="number"><span>3399</span>元
+                    <del><span>3999</span>元</del>
+                </p>
+            </div>
+            <div class="phonePhotoRight">
+                <div class="new" style="background: red">享8折</div>
+                <div class="phonePhotoRightImage">
+                    <a href="">
+                        <img src="./img/phone5.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米6X 6GB+128GB
+                </a></h3>
+                <p class="txt">轻薄美观得拍照手机</p>
+                <p class="number"><span>1499</span>元
+                    <del><span>1999</span>元</del>
+                </p>
+            </div>
+            <div class="phonePhotoRight">
+                <div class="new" style="background: red">减100元</div>
+                <div class="phonePhotoRightImage">
+                    <a href="">
+                        <img src="./img/phone6.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米Max 3 4GB+64GB
+                </a></h3>
+                <p class="txt"></p>
+                <p class="number"><span>1599</span>元
+                    <del><span>1699</span>元</del>
+                </p>
+            </div>
+            <div class="phonePhotoRight">
+                <div class="new" style="background: red">享8折</div>
+                <div class="phonePhotoRightImage">
+                    <a href="">
+                        <img src="./img/phone7.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    红米6 Pro
+                </a></h3>
+                <p class="txt">高颜值大电量 红米旗舰</p>
+                <p class="number"><span>569</span>元
+                    <del><span>599</span>元</del>
+                </p>
+            </div>
+            <div class="phonePhotoRight">
+                <div class="new" style="background: red">减30元</div>
+                <div class="phonePhotoRightImage">
+                    <a href="">
+                        <img src="./img/phone8.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    红米6A 2GB+16GB
+                </a></h3>
+                <p class="txt"></p>
+                <p class="number"><span>999</span>元
+                    <del><span>1299</span>元</del>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--phone-->
+<div class="tvSale">
+    <div class="tvSalePs">
+        <a href="">
+            <img src="./img/tv.jpg" alt="加载失败">
+        </a>
+    </div>
+</div>
+<!--tvSale-->
+<div class="appliance">
+    <div class="appContent">
+        <div class="appText">
+            家电
+            <div class="appTextList">
+                <ul class="four">
+                    <li>热门</li>
+                    <li>电视影音</li>
+                    <li>电脑</li>
+                    <li>家居</li>
+                </ul>
+            </div>
+        </div>
+        <div class="appPhoto">
+                <div class="appPhotoLeft">
+                    <a href="">
+                        <img src="./img/left1.jpg" alt="">
+                    </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/big1.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    米家互联网空调
+                </a></h3>
+                <p class="txt">1.5匹变频/高效制冷热/Al远程控制</p>
+                <p class="number"><span>12149</span>元
+                    <del><span>2199</span>元</del>
+                </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">已安装好了，是不是很气派</div>
+                        <p class="author">来自于 孙李 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="new">新品</div>
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/big2.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    米家激光投影电视 4k
+                </a></h3>
+                <p class="txt"></p>
+                <p class="number"><span>1499</span>元</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">小小的 喜欢 希望可以用久一点 还是不错的</div>
+                        <p class="author">来自于 336699 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="new">新品</div>
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/big3.png" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        15.6"笔记本 i5 4G MX110
+                    </a>
+                </h3>
+                <p class="txt"></p>
+                <p class="number"><span>4199</span>元 </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">速度快！服务好！效率高！师傅辛苦了！ </div>
+                        <p class="author">来自于 周思凡 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/big4.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        13.3"小米笔记本Air 四核i7 8G 256G MX150 银色
+                    </a>
+                </h3>
+                <p class="txt"></p>
+                <p class="number"><span>5799</span>元
+                    <del><span>5999</span>元</del>
+                </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">办公用很合适，物美价廉，小米的忠实粉丝 </div>
+                        <p class="author">来自于 漂泊 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/left2.jpg" alt="">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="new" style="background: red">减200元</div>
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/big5.png" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        米家空气净化器Pro
+                    </a>
+                </h3>
+                <p class="txt">OLED 显示屏幕/激光颗粒物质传感器</p>
+                <p class="number"><span>1299</span>元
+                    <del><span>1499</span>元</del>
+                </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">轻薄完美，深空灰超帅！ </div>
+                        <p class="author">来自于 1*215219 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/big6.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        米家电水壶
+                    </a>
+                </h3>
+                <p class="txt">一杯水，是一家人的安心</p>
+                <p class="number"><span>99</span>元 </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">变成忠实的米粉了，烧水很快声音也小，顺便晒几张小米8拍的照片 </div>
+                        <p class="author">来自于 针掉在路上 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/phone7.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        米家LED吸顶灯
+                    </a>
+                </h3>
+                <p class="txt">用光线，还原理想生活</p>
+                <p class="number"><span>369</span>元
+                    <del><span>399</span>元</del>
+                </p>
+                <div class="furu">
+                <a href="" class="fururow">
+                    <div class="zi">个头有点大哦，计划客餐厅各装一个。 </div>
+                    <p class="author">来自于 七月是季末 的评价</p>
+                </a>
+            </div>
+            </div>
+            <div class="appPhotoSmall">
+                <div class="smallPhoto">
+                    <a href="">
+                        <img src="./img/small1.jpg" alt="">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米净水器 （厨下式）
+                    </a>
+                </h3>
+                <p class="number"><span>1799</span>元</p>
+            </div>
+            <div class="appPhotoSmallBottom">
+                <div class="photo">
+                    <a href="">
+                        <i class="iconfont icon-youjiantou"></i>
+                    </a>
+                </div>
+                <h3>
+                    浏览更多
+                </h3>
+                <p>热门</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--appliance-->
+<div class="miSale">
+    <div class="miPs">
+        <a href="">
+            <img src="./img/xiaomiyoux.jpg" alt="加载失败">
+        </a>
+    </div>
+</div>
+<!--mi-->
+<div class="appliance">
+    <div class="appContent">
+        <div class="appText">
+            智能
+            <div class="appTextList">
+                <ul class="four">
+                    <li>热门</li>
+                    <li>出行</li>
+                    <li>健康</li>
+                    <li>酷玩</li>
+                    <li>路由器</li>
+                </ul>
+            </div>
+        </div>
+        <div class="appPhoto">
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/zhinengz.jpg" alt="">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/zhineng1.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    米家声波电动牙刷
+                </a></h3>
+                <p class="txt">磁悬浮声波马达,定制多种刷牙模式</p>
+                <p class="number"><span>179</span>元
+                    <del><span>199</span>元</del>
+                </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">目前挺好的，试用一段时间后才知道质量好不好，买了mini刷头，大人小一起用。  </div>
+                        <p class="author">来自于 nicholas 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/zhineng2.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    米家电动剃须刀
+                </a></h3>
+                <p class="txt"></p>
+                <p class="number"><span>179</span>元
+                    <del><span>199</span>元</del>
+                </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">东西收到了很好。配上黑鲨拍的照片。  </div>
+                        <p class="author">来自于 许向前 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/zhineng3.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米体重秤
+                    </a>
+                </h3>
+                <p class="txt">
+                    100克,喝杯水都可感知的精准
+                </p>
+                <p class="number"><span>99</span>元 </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">嗯，果然很精准。进一步确定了我作为一个胖子的事实！配合小米运动可以查看一段时间的体重趋势很方便。我要开始减肥了，嗯！ </div>
+                        <p class="author">来自于 觉醒的加菲猫 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/zhineng4.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米米家智能摄像机
+                    </a>
+                </h3>
+                <p class="txt"></p>
+                <p class="number"><span>129</span>元
+                </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">设置简单，把猫咪安排了。哈哈哈  </div>
+                        <p class="author">来自于 晴天 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/zhinengx.jpg" alt="">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/zhineng5.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米净水器(厨上式) 增强版
+                    </a>
+                </h3>
+                <p class="txt">400加仑大流量,纯水更多,废水更少</p>
+                <p class="number"><span>1499</span>元
+                </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">简单美观…安装超简单。然后发现…生产地址居然是家门口。可惜宿舍没WiFi…浪费了智能…看不到水质。  </div>
+                        <p class="author">来自于 sunkite 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/zhineng6.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        米家PM2.5检测仪
+                    </a>
+                </h3>
+                <p class="txt">一体黑OLED屏,智能联动</p>
+                <p class="number"><span>399</span>元 </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">东西很棒哒，已加入米家套餐。马上我就快买齐了所有的米家套餐产品  </div>
+                        <p class="author">来自于 你该吃药了 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="new" style="background: red">减10元</div>
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/zhineng7.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        空气净化器滤芯
+                    </a>
+                </h3>
+                <p class="txt">高效净化,可吸入颗粒物、甲醛</p>
+                <p class="number"><span>369</span>元
+                    <del><span>399</span>元</del>
+                </p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">外形简洁大方，操作简单，加入米家还可以远程遥控，太棒了，我米威武！  </div>
+                        <p class="author">来自于 忐忑乒乓 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoSmall">
+                <div class="smallPhoto">
+                    <a href="">
+                        <img src="./img/zhineng8.jpg" alt="">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米水质TDS检测笔
+                    </a>
+                </h3>
+                <p class="number"><span>29</span>元</p>
+            </div>
+            <div class="appPhotoSmallBottom">
+                <div class="photo">
+                    <a href="">
+                        <i class="iconfont icon-youjiantou"></i>
+                    </a>
+                </div>
+                <h3>
+                    浏览更多
+                </h3>
+                <p>健康</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--capacity-->
+<div class="yearSale">
+    <div class="yearPs">
+        <a href="">
+            <img src="./img/year.jpg" alt="加载失败">
+        </a>
+    </div>
+</div>
+<!--year-->
+<div class="appliance">
+    <div class="appContent">
+        <div class="appText">
+            搭配
+            <div class="appTextList">
+                <ul class="four">
+                    <li>热门</li>
+                    <li>耳机音箱</li>
+                    <li>电源</li>
+                    <li>电池存储卡</li>
+                </ul>
+            </div>
+        </div>
+        <div class="appPhoto">
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/daz.jpg" alt="">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/da1.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米USB充电器快充版(18W)
+                </a></h3>
+                <p class="number"><span>29.9</span>元
+                </p>
+                <p class="evaluate">1.6万人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">还可以，充的挺快的。note7拍夜景很赞啊。  </div>
+                        <p class="author">来自于 月岛枫 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <div class="new" style="background: red">享9折</div>
+                    <a href="">
+                        <img src="./img/da2.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米Al音箱
+                </a></h3>
+                <p class="number"><span>269</span>元
+                    <del><span>299</span>元</del>
+                </p>
+                <p class="evaluate">6.6万人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">买了很多东西就是没看到客服妹子点评，抠脚大汉不要！果断不要小米大汉！！！！！！ </div>
+                        <p class="author">来自于 曾氏锋哥 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/da3.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米移动电源3 20000mAh 高配版
+                    </a>
+                </h3>
+                <p class="number"><span>199</span>元 </p>
+                <p class="evaluate">1006人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">3感觉很有质感，比2大一点， 重量感觉还好。最近正好想换新电源，正好就出了这个，很满意。  </div>
+                        <p class="author">来自于 南部A丶ce 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/da4.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        新小米移动电源2 (10000mAh)
+                    </a>
+                </h3>
+                <p class="number"><span>79</span>元
+                </p>
+                <p class="evaluate">1.9万人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">不错，很喜欢。容量大时间长  </div>
+                        <p class="author">来自于 男儿当自强 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/dax.jpg" alt="">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/da5.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米移动电源2C (20000mAh)
+                    </a>
+                </h3>
+                <p class="number"><span>129</span>元
+                </p>
+                <p class="evaluate">2.9万人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">充电宝很不错，小米产品  </div>
+                        <p class="author">来自于 1482310049 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/da6.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米无线充电器 (通用快充版)
+                    </a>
+                </h3>
+                <p class="number"><span>69</span>元 </p>
+                <p class="evaluate">2119人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">外观漂亮，充电快，很实用，买了两个，一个放家里，一个放办公室，完美  </div>
+                        <p class="author">来自于 nicholas 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="new" style="background: red">享9折</div>
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/da7.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米USB充电器 (4口)
+                    </a>
+                </h3>
+                <p class="number"><span>59</span>元
+                    <del><span>69</span>元</del>
+                </p>
+                <p class="evaluate">1.7万人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">外形质感 棒棒哒，非常喜欢，自己做的保护套，很贴合，满意，继续支持哦。  </div>
+                        <p class="author">来自于 雷哲 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoSmall">
+                <div class="smallPhoto">
+                    <a href="">
+                        <img src="./img/da8.jpg" alt="">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米移动电源高配版 (10000mAh)
+                    </a>
+                </h3>
+                <p class="number"><span>149</span>元</p>
+            </div>
+            <div class="appPhotoSmallBottom">
+                <div class="photo">
+                    <a href="">
+                        <i class="iconfont icon-youjiantou"></i>
+                    </a>
+                </div>
+                <h3>
+                    浏览更多
+                </h3>
+                <p>热门</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--match 搭配-->
+<div class="parts">
+    <div class="partsPs">
+        <a href="">
+            <img src="./img/parts.jpg" alt="加载失败">
+        </a>
+    </div>
+</div>
+<!--parts 配件上图-->
+<div class="appliance">
+    <div class="appContent">
+        <div class="appText">
+            配件
+            <div class="appTextList">
+                <ul class="four">
+                    <li>热门</li>
+                    <li>保护套</li>
+                    <li>贴膜</li>
+                    <li>其他配件</li>
+                </ul>
+            </div>
+        </div>
+        <div class="appPhoto">
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/peis.jpg" alt="加载失败 ">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="new" style="background: red">享9折</div>
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/pei1.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米8 标准钢化玻璃膜
+                </a></h3>
+                <p class="number"><span>25</span>元
+                    <del><span>29</span>元</del>
+                </p>
+                <p class="evaluate">8151人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">小米商城发货速度非常快，大品牌值得信赖!EMS物流配送，快递小哥送货很及时，产品包装完好无损，快递小哥辛苦了，值得购买，愉悦开心的一-次购机体验!支持国产小米，永远做米粉心目中最酷的公司，永远做感动人心、价格厚道的好产品，永远做最具有性价比的好国民手机,让每个人都能享受的到科技带来的生活乐趣!我是米粉,我为国产小米加油^ 0 ^~ </div>
+                        <p class="author">来自于 苏强 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/pei2.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    小米8 硅胶保护套
+                </a></h3>
+                <p class="number"><span>49</span>元
+
+                </p>
+                <p class="evaluate">6593人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">小米8拍摄的，效果确实不错，不比单反相机差…  </div>
+                        <p class="author">来自于 哈哈哈 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/pei3.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米 8 屏幕指纹版&小米 8 透明探索版 硅胶保护套
+                    </a>
+                </h3>
+                <p class="number"><span>49</span>元 </p>
+                <p class="evaluate">1439人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">不知道买机有送保护套，留着备用吧！ </div>
+                        <p class="author">来自于 he 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/pei4.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        Mi MIX 2S 真皮保护套
+                    </a>
+                </h3>
+                <p class="number"><span>99</span>元
+                </p>
+                <p class="evaluate">807人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">手感非常好，摸起来好舒服，对得起这个价格  </div>
+                        <p class="author">来自于 月岛枫 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/peix.jpg" alt="">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="new" style="background: red">享8折</div>
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/pei5.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米8青春版极简高透保护壳
+                    </a>
+                </h3>
+                <p class="number"><span>29</span>元
+                    <del><span>39</span>元</del>
+                </p>
+                <p class="evaluate">807人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">手感是很不错的，以前买过一个硅胶的吧，坏的有点快可能是自己太能造  </div>
+                        <p class="author">来自于 zzz 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="new" style="background: red">享6折</div>
+                <div class="appPhotoBigImg">
+
+                    <a href="">
+                        <img src="./img/pei6.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米 8 标准高透贴膜
+                    </a>
+                </h3>
+                <p class="number"><span>10</span>元
+                    <del><span>19</span>元</del>
+                </p>
+                <p class="evaluate">4123人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">就是我想要的，如果你还没有赶快抓紧机遇，让小米科技带给你享受生活的乐趣。还等什么……心动不如行动。  </div>
+                        <p class="author">来自于 风的血 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/pei7.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米MIX 3 极简保护壳
+                    </a>
+                </h3>
+                <p class="number"><span>49</span>元
+                </p>
+                <p class="evaluate">628人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">大小很合适，手机也很好用。   </div>
+                        <p class="author">来自于 你来了 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoSmall">
+                <div class="smallPhoto">
+                    <a href="">
+                        <img src="./img/pei8.jpg" alt="">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        小米6X 极简保护壳 红色
+                    </a>
+                </h3>
+                <p class="number"><span>16</span>元</p>
+            </div>
+            <div class="appPhotoSmallBottom">
+                <div class="photo">
+                    <a href="">
+                        <i class="iconfont icon-youjiantou"></i>
+                    </a>
+                </div>
+                <h3>
+                    浏览更多
+                </h3>
+                <p>热门</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--配件-->
+<div class="parts">
+    <div class="partsPs">
+        <a href="">
+            <img src="./img/circum.jpg" alt="加载失败">
+        </a>
+    </div>
+</div>
+<!--circum上图-->
+<div class="appliance">
+    <div class="appContent">
+        <div class="appText">
+            周边
+            <div class="appTextList">
+                <ul class="four">
+                    <li>热门</li>
+                    <li>出行</li>
+                    <li>居家</li>
+                    <li>生活周边</li>
+                    <li>箱包</li>
+                </ul>
+            </div>
+        </div>
+        <div class="appPhoto">
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/cs.jpg" alt="加载失败">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/c1.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    TS尼龙偏光太阳镜 米家定制灰色
+                </a></h3>
+                <p class="number"><span>199</span>元
+                </p>
+                <p class="evaluate">1.7万人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">非常满意的一次购物，眼镜很轻，清晰度很好，遮阳效果也好，物流特快！  </div>
+                        <p class="author">来自于 的哥汽修15077093868 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/c2.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3><a href="">
+                    米兔招财猫足金吊坠
+                </a></h3>
+                <p class="number"><span>888</span>元
+                </p>
+                <p class="evaluate">1584人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">高端大气上档次，我已经拥有了 </div>
+                        <p class="author">来自于 我有两匹马 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/c3.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        90分轻薄无缝一体织鹅绒羽绒服用户评价
+                    </a>
+                </h3>
+                <p class="number"><span>229</span>元 </p>
+                <del><span>299</span>元</del>
+                <p class="evaluate">5245人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">总体感觉不错，165cm.75公斤㎏，XL的刚合适   </div>
+                        <p class="author">来自于 靠近我，温暖你 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/c4.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        飞天猪米兔
+                    </a>
+                </h3>
+                <p class="number"><span>49</span>元
+                </p>
+                <p class="evaluate">273人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">很可爱呀～特别特别可爱，猪年的兔子萌萌哒 </div>
+                        <p class="author">来自于 沉默⚡不是金 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoLeft">
+                <a href="">
+                    <img src="./img/cx.jpg" alt="">
+                </a>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/c5.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        保温杯
+                    </a>
+                </h3>
+                <p class="number"><span>99</span>元
+                </p>
+                <p class="evaluate">1.7万人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">上一个忘记在查济古镇了…重新买了个…以后一看到杯子就想起查济 </div>
+                        <p class="author">来自于 孙文浩 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/c6.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        米家飞天猪足金吊坠
+                    </a>
+                </h3>
+                <p class="number"><span>779</span>元
+                    <del><span>799</span>元</del>
+                </p>
+                <p class="evaluate">172人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">给老妈本命年买的～  </div>
+                        <p class="author">来自于 有人叫我昊姐 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoBig">
+                <div class="appPhotoBigImg">
+                    <a href="">
+                        <img src="./img/c7.jpg" alt="加载失败">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        贝医生巴士牙刷(四色装)
+                    </a>
+                </h3>
+                <p class="number"><span>34.9</span>元
+                    <del><span>39.9</span>元</del>
+                </p>
+                <p class="evaluate">1.7万人评价</p>
+                <div class="furu">
+                    <a href="" class="fururow">
+                        <div class="zi">拿回家就和女儿一起刷了牙！哈哈！软，好，甜甜哒！  </div>
+                        <p class="author">来自于 啊米 的评价</p>
+                    </a>
+                </div>
+            </div>
+            <div class="appPhotoSmall">
+                <div class="smallPhoto">
+                    <a href="">
+                        <img src="./img/c8.jpg" alt="">
+                    </a>
+                </div>
+                <h3>
+                    <a href="">
+                        8H乳胶弹簧静音床垫
+                    </a>
+                </h3>
+                <p class="number"><span>1499</span>元</p>
+            </div>
+            <div class="appPhotoSmallBottom">
+                <div class="photo">
+                    <a href="">
+                        <i class="iconfont icon-youjiantou"></i>
+                    </a>
+                </div>
+                <h3>
+                    浏览更多
+                </h3>
+                <p>健康</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--circum-->
+<div class="parts">
+    <div class="partsPs">
+        <a href="">
+            <img src="./img/recomm.jpg" alt="加载失败">
+        </a>
+    </div>
+</div>
+<!--recommend上图-->
+<div class="recommend">
+    <div class="recommendContent">
+        <div class="recommendText">
+            <h2 class="recommendTextTitle">为您推荐</h2>
+            <div class="recommendTextMore">
+                <div class="recommendTextMoreLogo" style="border-right: 1px solid #b0b0b0">
+                    <a href="">
+                        <i class="iconfont icon-zuojiantou" style="color: rgba(0,0,0,0.2)"></i>
+                    </a>
+                </div>
+                <div class="recommendTextMoreLogo">
+                    <a href="">
+                        <i class="iconfont icon-zuojiantou-copy"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="recommendPs">
+            <div class="recommendPsFour">
+                <div class="recommendImg">
+                    <img src="./img/re1.jpg" alt="加载失败">
+                </div>
+                <div class="recommendTxt">
+                    <a href="">最生活浴巾•Air（1条装）</a>
+                </div>
+                <p class="number"><span>69</span>元
+                </p>
+                <p class="evaluate">33人评价</p>
+
+            </div>
+            <div class="recommendPsFour">
+                <div class="recommendImg">
+                    <img src="./img/r2.jpg" alt="加载失败">
+                </div>
+                <div class="recommendTxt">
+                    <a href="">小米家庭影院</a>
+                </div>
+                <p class="number"><span>2099</span>元
+                </p>
+                <p class="evaluate"></p>
+            </div>
+            <div class="recommendPsFour">
+                <div class="recommendImg">
+                    <img src="./img/r3.jpg" alt="加载失败">
+                </div>
+                <div class="recommendTxt">
+                    <a href="">FREETIE云弹减震运动鞋 男款 花黑色</a>
+                </div>
+                <p class="number"><span>249</span>元
+                </p>
+                <p class="evaluate">1058人评价</p>
+            </div>
+            <div class="recommendPsFour">
+                <div class="recommendImg">
+                    <img src="./img/r4.jpg" alt="加载失败">
+                </div>
+                <div class="recommendTxt">
+                    <a href="">时怡中粮优选碧根果</a>
+                </div>
+                <p class="number"><span>49.9</span>元
+                </p>
+                <p class="evaluate">7人评价</p>
+            </div>
+            <div class="recommendPsFour">
+                <div class="recommendImg">
+                    <img src="./img/r5.jpg" alt="加载失败">
+                </div>
+                <div class="recommendTxt">
+                    <a href="">云米不锈钢真空保温壶 </a>
+                </div>
+                <p class="number"><span>119</span>元
+                </p>
+                <p class="evaluate">1765人评价</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--recommend-->
+<div id="box1">
+    <div class="comment">
+        <div class="box-hd">
+            <div class="hdLeft">
+                <h2 class="title">热评产品</h2>
+            </div>
+        </div>
+        <div class="commentBt">
+            <ul class="review">
+                <li class="reviewItem">
+                    <div class="figure">
+                        <a href=""><img src="./img/re11.jpg" alt=""></a>
+                    </div>
+                    <p class="reviewText"><a href="">外形简洁大方，大爱小米！全家人都在用小米的产品，真心不错，最主要的是性价比高。附图，给客服妹子一个大...</a></p>
+                    <p class="author"> 来自于 酸小妞～！ 的评价 </p>
+                    <div class="info">
+                        <p>米家车载空气净化器（U...<span class="sep">|</span><i class="price">449元</i></p>
+                    </div>
+                </li>
+                <li class="reviewItem1">
+                    <div class="figure">
+                        <a href=""><img src="./img/re2.jpg" alt=""></a>
+                    </div>
+                    <p class="reviewText"><a href="">包装很让人感动，式样也很可爱，做出的饭全家人都爱吃，超爱五星！手机控制还是不太熟练，最主要是没有连接...</a></p>
+                    <p class="author">来自于 HZG 的评价</p>
+                    <div class="info">
+                        <p>米家压力IH电饭煲<span class="sep">|</span><i class="price" style="margin-right: 40px">850元</i></p>
+                    </div>
+                </li>
+                <li class="reviewItem1">
+                    <div class="figure">
+                        <a href=""><img src="./img/re3.jpg" alt=""></a>
+                    </div>
+                    <p class="reviewText"><a href="">东西真心不错，用过最好用的插线板，做工外观没得挑剔，3个USB接口很实用，充电快，建议不包邮的应该在...</a></p>
+                    <p class="author"> 来自于 yinyin19891117 的评价 </p>
+                    <div class="info">
+                        <p>小米插线板<span class="sep">|</span><i class="price" style="margin-right: 80px">49元</i></p>
+                    </div>
+                </li>
+                <li class="reviewItem1">
+                    <div class="figure">
+                        <a href=""><img src="./img/re4.jpg" alt=""></a>
+                    </div>
+                    <p class="reviewText"><a href="">超级喜欢！小巧玲珑！音质完美！不知道为什么！只要是小米出的东西我都喜欢！那倒是因为那一句？？小米为发...</a></p>
+                    <p class="author">来自于 田密 的评价 </p>
+                    <div class="info">
+                        <p>小米随身蓝牙音箱<span class="sep">|</span><i class="price" style="margin-right: 40px">59元</i></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--reping-->
+<div id="box2">
+    <div class="comment">
+        <div class="box-hd">
+            <div class="hdLeft">
+                <h2 class="title">内容</h2>
+            </div>
+        </div>
+        <div class="commentBt">
+            <ul class="review1">
+                <li class="reviewItem3">
+                    <div class="tucontont">
+                        <a href=""><i class="iconfont icon-zuojiantou"></i></a>
+                    </div>
+                    <div class="tucontont2">
+                        <a href=""><i class="iconfont icon-iconfontjiantou5"></i></a>
+                    </div>
+                    <p class="title">图书</p>
+                    <p class="name">哈利·波特与被诅咒的孩子</p>
+                    <p class="desc"><a href="">“哈利·波特”第八个故事中文版震撼来<br>袭！特别彩排版剧本！ </a></p>
+                    <p class="price"><a href="">29.37元</a></p>
+                    <a href=""><img src="./img/n1.png" alt=""></a>
+                    <div class="wrapper">
+                        <div class="min"></div>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                    </div>
+                </li>
+                <li class="reviewItem4">
+                    <div class="tucontont">
+                        <a href=""><i class="iconfont icon-zuojiantou"></i></a>
+                    </div>
+                    <div class="tucontont2">
+                        <a href=""><i class="iconfont icon-iconfontjiantou5"></i></a>
+                    </div>
+                    <p class="title" style="color: #83c44e">MIUI 主题</p>
+                    <p class="name">LINE FRIENDS温暖圣诞主题</p>
+                    <p class="desc"><a href="">超萌超可爱 LINE FRIENDS来袭~ </a></p>
+                    <p class="price"><a href=""></a></p>
+                    <a href=""><img src="./img/n2.png" alt=""></a>
+                    <div class="wrapper">
+                        <div class="min"></div>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                    </div>
+                </li>
+                <li class="reviewItem4">
+                    <div class="tucontont">
+                        <a href=""><i class="iconfont icon-zuojiantou"></i></a>
+                    </div>
+                    <div class="tucontont2">
+                        <a href=""><i class="iconfont icon-iconfontjiantou5"></i></a>
+                    </div>
+                    <p class="title" style="color: #e53935">游戏</p>
+                    <p class="name">非人学园</p>
+                    <p class="desc"><a href="">脑洞大开的二次元竞技手游 </a></p>
+                    <p class="price"><a href=""></a></p>
+                    <a href=""><img src="./img/n3.png" alt=""></a>
+                    <div class="wrapper">
+                        <div class="min"></div>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                    </div>
+                </li>
+                <li class="reviewItem4">
+                    <div class="tucontont">
+                        <a href=""><i class="iconfont icon-zuojiantou"></i></a>
+                    </div>
+                    <div class="tucontont2">
+                        <a href=""><i class="iconfont icon-iconfontjiantou5"></i></a>
+                    </div>
+                    <p class="title" style="color: #2196f3">应用</p>
+                    <p class="name">2018金米奖</p>
+                    <p class="desc"><a href="">最优秀的应用和游戏 </a></p>
+                    <p class="price"><a href=""></a></p>
+                    <a href=""><img src="./img/n4.png" alt=""></a>
+                    <div class="wrapper">
+                        <div class="min"></div>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                        <a href="">
+                            <div class="min1"></div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--neirong-->
+<div id="box3">
+    <div class="video">
+        <div class="phoneTop">
+            <div class="topText"><h2 class="title">视频</h2></div>
+            <div class="topPicture"><a class="text" href="">查看全部<i class="iconfont icon-zuojiantou-copy"></i></a></div>
+        </div>
+        <div class="videoBt">
+            <ul class="videboottom">
+                <li class="Bootomleft">
+                    <div class="videotu">
+                        <img src="./img/sp1.jpg" alt="" title="点击播放视频">
+                        <a href=""><i class="iconfont icon-bofang"></i></a>
+                    </div>
+                    <div class="videotext">
+                        <p class="videofirst"><a href="">一团火</a></p>
+                        <p class="videosecond">小米创业8年内部纪录片（手机篇）</p>
+                    </div>
+                </li>
+                <li class="Bootomright">
+                    <div class="videotu">
+                        <img src="./img/sp2.jpg" alt="" title="点击播放视频">
+                        <a href=""><i class="iconfont icon-bofang"></i></a>
+                    </div>
+                    <div class="videotext">
+                        <p class="videofirst"><a href="">小米8，一部与众不同的手机</a></p>
+                        <p class="videosecond">透明探索版，将科技与美学完美结合</p>
+                    </div>
+                </li>
+                <li class="Bootomright">
+                    <div class="videotu">
+                        <img src="./img/sp3.jpg" alt="" title="点击播放视频">
+                        <a href=""><i class="iconfont icon-bofang"></i></a>
+                    </div>
+                    <div class="videotext">
+                        <p class="videofirst"><a href="">小米MIX 2S，一面科技 一面艺术</a></p>
+                        <p class="videosecond">艺术品般陶瓷机身，惊艳、璀璨</p>
+                    </div>
+                </li>
+                <li class="Bootomright">
+                    <div class="videotu">
+                        <img src="./img/sp4.jpg" alt="" title="点击播放视频">
+                        <a href=""><i class="iconfont icon-bofang"></i></a>
+                    </div>
+                    <div class="videotext">
+                        <p class="videofirst"><a href="">生活中无所不在的小爱同学</a></p>
+                        <p class="videosecond">一句话搞定手机复杂操作</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--video-->
+<div class="siteFooter">
+    <div class="footer">
+        <div class="footerTop">
+            <ul class="service">
+                <li><a href=""><i class="iconfont icon-weixiu"></i>预约维修服务</a>
+                    <span>|</span></li>
+            </ul>
+            <ul class="service">
+                <li><a href=""><i class="iconfont icon-icon-test"></i>7天无理由退货</a>
+                    <span>|</span></li>
+            </ul>
+            <ul class="service">
+                <li><a href=""><i class="iconfont icon-15"></i>15天免费换货</a>
+                    <span>|</span></li>
+            </ul>
+            <ul class="service">
+                <li><a href=""><i class="iconfont icon-liwu"></i>满150包邮</a>
+                    <span>|</span></li>
+            </ul>
+            <ul class="service">
+                <li><a href=""><i class="iconfont icon-weizhi"></i>520余家售后网点</a>
+                    <span>|</span></li>
+            </ul>
+        </div>
+        <div class="footerBottom">
+            <ul class="bt">
+                <li class="zx">帮助中心</li>
+                <li><a href="">账户管理</a></li>
+                <li><a href="">购物指南</a></li>
+                <li><a href="">订单操作</a></li>
+            </ul>
+            <ul class="bt">
+                <li class="zx">服务支持</li>
+                <li><a href="">售后政策</a></li>
+                <li><a href="">自助服务</a></li>
+                <li><a href="">相关下载</a></li>
+            </ul>
+            <ul class="bt">
+                <li class="zx">线下门店</li>
+                <li><a href="">小米之家</a></li>
+                <li><a href="">服务网点</a></li>
+                <li><a href="">授权体验店</a></li>
+            </ul>
+            <ul class="bt">
+                <li class="zx">关于小米</li>
+                <li><a href="">了解小米</a></li>
+                <li><a href="">加入小米</a></li>
+                <li><a href="">投资者关系</a></li>
+            </ul>
+            <ul class="bt">
+                <li class="zx">关注我们</li>
+                <li><a href="">新浪微博</a></li>
+                <li><a href="">官方微信</a></li>
+                <li><a href="">联系我们</a></li>
+            </ul>
+            <ul class="bt">
+                <li class="zx">特色服务</li>
+                <li><a href="">F码通道</a></li>
+                <li><a href="">礼物码</a></li>
+                <li><a href="">防伪查询</a></li>
+            </ul>
+            <div class="fotse">
+                <p class="phone1">400-100-5678</p>
+                <p>周一至周日 8:00-18:00</p>
+                <p>（仅收市话费）</p>
+                <a href=""><i class="iconfont icon-lianxi"></i>联系客服</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--siteFooter-->
+<div class="siteInfo">
+    <div class="container">
+        <div class="log"><img src="./img/mi.png" alt=""></div>
+        <div class="infoText">
+            <p class="sites">
+                <a href="">小米商城</a>
+                <span>|</span>
+                <a href="">MIUI</a>
+                <span>|</span>
+                <a href="">米家</a>
+                <span>|</span>
+                <a href="">米聊</a>
+                <span>|</span>
+                <a href="">多看</a>
+                <span>|</span>
+                <a href="">游戏</a>
+                <span>|</span>
+                <a href="">路由器</a>
+                <span>|</span>
+                <a href="">米粉卡</a>
+                <span>|</span>
+                <a href="">政企服务</a>
+                <span>|</span>
+                <a href="">小米天猫店</a>
+                <span>|</span>
+                <a href="">隐私政策</a>
+                <span>|</span>
+                <a href="">商城用户协议</a>
+                <span>|</span>
+                <a href="">问题反馈</a>
+                <span>|</span>
+                <a href="">廉政举报</a>
+                <span>|</span>
+                <a href="">诚信合规</a>
+                <span>|</span>
+                <a href="">Select Region</a>
+            </p>
+        </div>
+        <div class="text">
+            <p>
+                <a href="">© mi.com</a> 京ICP证110507号 <a href="">京ICP备10046444号 </a><a href="">京公网安备11010802020134号</a>
+                <a href="">京网文[2017]1530-131号</a>
+            </p>
+            <p>
+                <a href="">（京）网械平台备字（2018）第00005号</a><a href="">互联网药品信息服务资格证 (京) -非经营性-2014-0090</a> <a href="">
+                营业执照</a>
+                <a href="">医疗器械公告</a>
+            </p>
+            <p>
+                <a href="">增值电信业务许可证</a> 网络食品经营备案（京）【2018】WLSPJYBAHF-12 <a href="">食品经营许可证</a>
+            </p>
+            <p>
+                违法和不良信息举报电话：185-0130-1238 <a href="">知识产权侵权投诉</a> 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+            </p>
+            <p class="tu">
+                <a href=""> <img src="./img/z1.png" alt=""></a>
+                <a href=""><img src="./img/z2.png" alt=""></a>
+                <a href=""><img src="./img/z3.png" alt=""></a>
+                <a href=""><img src="./img/z4.png" alt=""></a>
+                <a href=""><img src="./img/z5.png" alt=""></a>
+            </p>
+        </div>
+    </div>
+    <div class="slogan">
+        <p>探索黑科技，小米为发烧而生!</p>
+    </div>
+</div>
+<div class="back">
+    <div class="backFirst" style="    border-bottom: 1px solid #f5f5f5;">
+        <div class="evm">
+            <div class="img">
+                <img src="./img/evm.png" alt="加载失败">
+            </div>
+            <p>手机扫一扫一分赢好礼</p>
+        </div>
+        <a href=""><i class="iconfont icon-shouji"></i>
+            <p class="text">手机APP</p></a>
+    </div>
+    <div class="backFirst" style="    border-bottom: 1px solid #f5f5f5;">
+        <a href="">
+            <i class="iconfont icon-iconfonticon5"></i>
+            <p class="text">个人中心</p>
+        </a>
+    </div>
+    <div class="backFirst" style="    border-bottom: 1px solid #f5f5f5;">
+        <a href="">
+            <i class="iconfont icon-kefu-copy"></i>
+            <p class="text">联系客服</p>
+        </a>
+    </div>
+    <div class="backFirst" style="">
+        <a href="">
+            <i class="iconfont icon-gouwuchekong"></i>
+            <p class="text">购物车</p>
+        </a>
+    </div>
+</div>
+<div class="backTwo">
+    <div class="backSecond">
+        <a href="">
+            <i class="iconfont icon-huidaodingbu"></i>
+            <p class="text">回顶部</p>
+        </a>
+    </div>
+</div>
+<script>
+    let item=document.querySelector(".backFirst:first-child");
+    let evm=document.querySelector(".evm");
+    item.onmouseenter=function () {
+        evm.style.display="block";
+    };
+    item.onmouseleave=function () {
+        evm.style.display="none"
+    }
+</script>
+<!--back-->
+</body>
+</html>

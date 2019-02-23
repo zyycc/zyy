@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    /*去列表样式*/
+}
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+body {
+    font-size: 16px;
+    font-family: '微软雅黑', 'sans-serif';
+}
+img{
+    border: none;
+}
+.header{
+    width: 1226px;
+    height: 100px;
+    background: #b0b0b0;
+    margin: 0 auto;
+}

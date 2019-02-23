@@ -1,0 +1,327 @@
+html , body , h1,h2,h3,h4,h5,h6,p,pre,ol,ul,li,form,input,textarea{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    font: 16px "Microsoft YaHei UI" ,"sans-serif";
+    color: #333333;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+/*第一个*/
+.nav{
+    width: 100%;
+    height: 79px;
+    background: rgba(0,0,0,0.15);
+    position: fixed;
+    z-index: 999;
+    top: 0;
+}
+.navContent{
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto ;
+}
+.logo{
+    width: 150px;
+    height: 50px;
+    float: left;
+    margin-top:14px ;
+}
+/* 行内元素没有宽高属性*/
+.logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.logo a img{
+    width: 100%;
+    height: 100%;
+}
+.navList{
+    width: 602px;
+    height: 100%;
+    float: right;
+}
+.navList li{
+    float: left;
+    width: 86px;
+    height: 100%;
+}
+.navList li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 79px;
+    font-size: 14px;
+    transition: color  linear .5s ;
+}
+/*鼠标移上去*/
+.navList li a:hover{
+    color: #16b0bc;
+}
+/*第二个*/
+.banner{
+    width: 100%;
+    height: 720px;
+
+}
+.banner img{
+    width: 100%;
+    height: 720px;
+}
+/*第三个*/
+.next{
+    width: 100%;
+    height: 606px;
+    background: white;
+    padding: 70px 0;
+}
+.nextContent{
+    width: 1170px;
+    height: 606px;
+    background: white;
+    margin: auto;
+}
+.nextWord{
+    width: 1170px;
+    height: 151px;
+
+}
+.nextWord p, h1{
+    text-align: center;
+    padding-top: 20px;
+    font-weight: normal;
+}
+.nextPhoto{
+    width: 1170px;
+    height: 455px;
+    background: #FFFFFF;
+}
+.nextCenter{
+    width:1020px;
+    height: 455px;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+.nextLeft{
+    width: 30px;
+    height: 30px;
+    margin-top: 194px;
+    float: left;
+    display: inline-block;
+}
+.nextLeft img{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+.nextRight{
+    width: 30px;
+    height: 30px;
+    margin-top: 194px;
+    float: right;
+    display: inline-block;
+}
+.nextRight img{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+.nextLun{
+    width: 1370px;
+    height:455px;
+
+}
+.nextLun.nextSi{
+    width: 1370px;
+    height: 455px;
+}
+.nextFen{
+    width: 320px;
+    height: 455px;
+    margin-right: 25px;
+    display: inline-block;
+
+}
+.nextFen img{
+    width: 320px;
+    height: 320px;
+    border-radius: 300px;
+
+}
+.nextFen h3{
+    font-weight: normal;
+    text-align: center;
+}
+.nextFen div{
+    width: 320px;
+    height: 28px;
+    background: red;
+    text-align: center;
+    font-size: 14px;
+    line-height: 2em;
+    color: #ffffff;
+    margin-top: 15px;
+}
+/*第四个*/
+.flower{
+    width: 100%;
+    height: 750px;
+    background: #f5f5f5;
+}
+.flowerContent{
+    width: 1170px;
+    height: 610px;
+    margin: 0 auto;
+    padding: 70px 0;
+
+}
+.flowerContent h1{
+    height: 50px;
+    text-align: center;
+    font-weight: normal;
+
+}
+.flowerList{
+    width: 100%;
+    height: 560px;
+}
+.flowerList .flowerItem{
+    width: 570px;
+    height: 110px;
+    margin-top: 30px;
+    margin-right: 30px;
+    float: left;
+}
+.flowerList .flowerItem:nth-of-type(even){
+    margin-right: 0;
+}
+.flowerItem .itemThumb{
+    width: 160px;
+    height: 96px;
+    margin-right: 20px;
+    margin-bottom: 14px;
+    float: left;
+
+}
+.itemThumb a , .itemThumb a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.flowerItem .itemInfo{
+    width: 390px;
+    height: 100%;
+    float: right;
+    font-size: 14px;
+    color: #76838f;
+}
+.itemInfo p.infoDesc{
+    padding: 5px 0;
+    height: 2.2em;
+    overflow: hidden;
+    position: relative;
+}
+.itemInfo p.infoDesc::after{
+    content: '...';
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.itemInfo h2 a{
+    font-weight: 400;
+    font-size: 18px;
+    transition: all ease .5s;
+}
+.itemInfo h2 a:hover{
+    color: #16b0bc;
+    text-decoration: underline;
+}
+.itemInfo p.infoDesc{
+    padding: 5px 0;
+}
+/*第五个*/
+.work{
+    width: 100%;
+    height: 900px;
+}
+.workCenter{
+    width: 100%;
+    height: 900px;
+}
+.workContent{
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto ;
+}
+.name{
+    width: 100%;
+    height: 44px;
+    margin-top: 60px;
+}
+.txt{
+    width: 100%;
+    height:240px;
+    margin-top: 100px;
+
+}
+.map{
+    width:530px;
+    height: 340px;
+    margin:40px auto 0;
+
+}
+.workContent  h1{
+    text-align: center;
+}
+.pre{
+    width: 1170px;
+    height:33px;
+    text-align: center;
+
+}
+.pre1{
+    width: 1170px;
+    height:33px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/*第六个*/
+.last{
+    width: 100%;
+    height: 183px;
+    background: #f5f5f5;
+    border-top: solid 1px #f0f2f5;
+}
+.lastTop{
+    background: #ffffff;
+    padding: 10px 0;
+}
+.lastTU{
+    width: 100%;
+    height: 57px;
+    background: #f5f5f5;
+    text-align: center;
+}
+.last p{
+    width: 1140px;
+    height: 25px;
+    margin: 0 auto;
+    text-align: center;
+    color: #aaaaaa;
+}
+.lastTU img{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.last p a:hover{
+    color: #89bceb;
+    text-decoration: underline;
+}

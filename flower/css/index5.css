@@ -1,0 +1,215 @@
+html , body , h1,h2,h3,h4,h5,h6,p,pre,ol,ul,li,form,input,textarea{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    font: 16px "Microsoft YaHei UI" ,"sans-serif";
+    color: #333333;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+/*第一个*/
+.nav{
+    width: 100%;
+    height: 79px;
+    background: #fff;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+}
+.navContent{
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto ;
+}
+.logo{
+    width: 150px;
+    height: 50px;
+    float: left;
+    margin-top:14px ;
+}
+/* 行内元素没有宽高属性*/
+.logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.logo a img{
+    width: 100%;
+    height: 100%;
+}
+.navList{
+    width: 602px;
+    height: 100%;
+    float: right;
+}
+.navList li{
+    float: left;
+    width: 86px;
+    height: 100%;
+}
+.navList li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 79px;
+    font-size: 14px;
+    transition: color  linear .5s ;
+}
+/*鼠标移上去*/
+.navList li a:hover{
+    color: #16b0bc;
+}
+/*nav*/
+.container{
+    width: 100%;
+    height: 100%;
+    padding-top: 79px;
+    background: #ffffff;
+    margin-bottom: 30px;
+}
+.container .container-fluid {
+    width: 100%;
+    height: 1224px;
+    margin: 0 auto;
+}
+.container .widget {
+    display: flex;
+    width:50%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+.widget .widgetImage{
+    width:100%;
+    height: 100%;
+    background: url(../img/51.JPG) no-repeat;
+    background-size: cover;
+    transition: all 0.6s;
+}
+.widget .widgetImageT{
+    width:100%;
+    height: 100%;
+    background: url(../img/52.JPG) no-repeat;
+    background-size: cover;
+    transition: all 0.6s;
+}
+.widget .widgetImageF{
+    width:100%;
+    height: 100%;
+    background: url(../img/53.JPG) no-repeat;
+    background-size: cover;
+    transition: all 0.6s;
+}
+.widget .widgetImageS{
+    width:100%;
+    height: 100%;
+    background: url(../img/54.JPG) no-repeat;
+    background-size: cover;
+    transition: all 0.6s;
+}
+.container .widgetImage:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.container .widgetImageT:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.container .widgetImageF:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.container .widgetImageS:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.widget .rowBox{
+    position: absolute;
+    top: 40%;
+    left:40%;
+}
+.container .widget .row {
+    width: 120px;
+    height: 138px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.rowBox .widgetTime:hover{
+    color: #fff;
+}
+.container .widget .row .widgetTime {
+    text-align: center;
+    width: 120px;
+    color: #ccc;
+}
+
+.container .widget .row .widgetTime span {
+    font-size: 14px;
+}
+
+.container .widget .row .widgetTime .whippletree {
+    margin: 0 auto;
+    width: 20px;
+    height: 2px;
+    border-bottom: 1px solid #fff;
+}
+
+.container .widget .row .widgetTime .browse {
+    margin: 0 auto;
+    border-radius: 3px;
+    line-height: 35px;
+    color: #fff;
+    width: 59px;
+    height: 34px;
+    border: 1px solid #fff;
+}
+.container .widget .row .widgetTime .browse:hover{
+    background: #fff;
+    color: #76838f;
+}
+.two{
+    width: 50%;
+    height: 30px;
+    float: left;
+    line-height: 30px;
+    color: #2a333c;
+}
+/*last*/
+.last{
+    width: 100%;
+    height: 183px;
+    background: #f5f5f5;
+    border-top: solid 1px #f0f2f5;
+}
+.lastTop{
+    background: #ffffff;
+    padding: 10px 0;
+}
+.lastTU{
+    width: 100%;
+    height: 57px;
+    background: #f5f5f5;
+    text-align: center;
+}
+.last p{
+    width: 1140px;
+    height: 25px;
+    margin: 0 auto;
+    text-align: center;
+    color: #aaaaaa;
+}
+.lastTU img{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.last p a:hover{
+    color: #89bceb;
+    text-decoration: underline;
+}
